@@ -18,9 +18,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @categories.each do |item| %>
-        <%= render 'item', id: item[:id], name: item[:name],  product_count: item[:product_count]%>
-        <% end %>
+        <%= render @category_array %>
       </tbody>
     </table>
 
