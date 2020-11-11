@@ -13,12 +13,14 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th colspan="2">Categories</th>
-          
+          <th>Categories</th>
+          <th>Unique Products</th>
         </tr>
       </thead>
       <tbody>
-        <%= render @category_array %>
+        <% @categories.each do |category| %>
+          <%= render 'category', id: category[:id], name: category[:name],  product_count: category[:product_count]%>
+        <% end %>
       </tbody>
     </table>
 
