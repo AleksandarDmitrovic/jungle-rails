@@ -1,4 +1,6 @@
-<h1>Dashboard</h1>
-<#% raise @category_count.inspect %>
-<p><%= link_to 'Total Products: ',  [:admin, :products] %><%= @product_count %></p>
-<p>Total Product Categories: <%= @category_count %></p>
+<h1>Dashboard <span class="glyphicon glyphicon-stats" aria-hidden="true"></span></h1>
+
+<p class="well well-lg"><%= link_to 'Total Products: ',  [:admin, :products] %><%= @product_count %></p>
+
+
+<p class="well well-lg">Total Product Categories: <%= @category_count %></p>
