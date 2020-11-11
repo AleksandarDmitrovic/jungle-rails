@@ -14,10 +14,13 @@
       <thead>
         <tr>
           <th colspan="2">Categories</th>
+          
         </tr>
       </thead>
       <tbody>
-        <%= render @categories %>
+        <% @categories.each do |item| %>
+        <%= render 'item', id: item[:id], name: item[:name],  product_count: item[:product_count]%>
+        <% end %>
       </tbody>
     </table>
 
