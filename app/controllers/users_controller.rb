@@ -9,7 +9,6 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/"
     else
-      flash[:error] = 'An error occured!'
       render 'new'
     end
   end
