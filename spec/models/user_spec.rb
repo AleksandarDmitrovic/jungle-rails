@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   describe 'Validations' do
     let(:user) { User.new( first_name: "Jhon", last_name: "Doe", email: "jdoe@gmail.com", password: "password", password_confirmation: "password") }
     context 'when creating a new user' do
@@ -34,7 +35,6 @@ RSpec.describe User, type: :model do
         user.last_name = nil
         user.email = nil
         user.save
-        p user.errors.full_messages
         expect(user).to_not be_valid
         expect(user.errors.full_messages).to include("First name can't be blank")
         expect(user.errors.full_messages).to include("Last name can't be blank")
@@ -47,6 +47,24 @@ RSpec.describe User, type: :model do
         password_length = user.password.length.to_s
         expect(user).to_not be_valid
         expect(user.errors.full_messages).to include("Password is too short (minimum is 8 characters)")
+      end
+    end
+  end
+
+  describe '.authenticate_with_credentials' do
+    let(:user) { User.new( first_name: "Jhon", last_name: "Doe", email: "jdoe@gmail.com", password: "password", password_confirmation: "password") }
+    context 'when loging in' do
+      it "returns a user instance when successfully authenticated" do
+        user.save
+        email = user.email
+        password = user.password
+        expect(User.authenticate_with_credentials(email, password)).to eql(user)
+      end
+      it "returns a nil when user can't be authenticated" do
+        user.save
+        email = user.email
+        password = "not the right password"
+        expect(User.authenticate_with_credentials(email, password)).to eql(nil)
       end
     end
   end
