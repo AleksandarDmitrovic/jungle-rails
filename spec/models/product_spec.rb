@@ -7,9 +7,7 @@ RSpec.describe Product, type: :model do
     context 'a new initialized product' do
       it 'saves with all required fields filled in' do
         category.save
-        p category
         product.save
-          p @product
         expect(product).to be_valid
       end
       it 'fails to save without a name field' do
