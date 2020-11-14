@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   has_secure_password
+
+  before_save :downcase
   
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -15,6 +17,10 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+
+  def downcase
+    self.email = self.email.downcase unless self.email.nil?
   end
 
 end

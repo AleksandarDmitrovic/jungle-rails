@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
 
   describe 'Validations' do
     let(:user) { User.new( first_name: "Jhon", last_name: "Doe", email: "jdoe@gmail.com", password: "password", password_confirmation: "password") }
+    
     context 'when creating a new user' do
       it 'saves when password and password_confirmation fields match ' do
         user.save
@@ -53,6 +54,8 @@ RSpec.describe User, type: :model do
 
   describe '.authenticate_with_credentials' do
     let(:user) { User.new( first_name: "Jhon", last_name: "Doe", email: "jdoe@gmail.com", password: "password", password_confirmation: "password") }
+    let(:user2) { User.new( first_name: "Jhon", last_name: "Deer", email: "JDEER@gmail.com", password: "password", password_confirmation: "password") }
+
     context 'when loging in' do
       it "returns a user instance when successfully authenticated" do
         user.save
@@ -77,6 +80,12 @@ RSpec.describe User, type: :model do
         email = "JDoE@gmail.com"
         password = user.password
         expect(User.authenticate_with_credentials(email, password)).to eql(user)
+      end
+      it "authenticates even when email entered has different case than what user entered upon signup" do
+        user2.save
+        email = "jdeer@gmail.com"
+        password = user.password
+        expect(User.authenticate_with_credentials(email, password)).to eql(user2)
       end
     end
   end
