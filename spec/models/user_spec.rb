@@ -66,6 +66,12 @@ RSpec.describe User, type: :model do
         password = "not the right password"
         expect(User.authenticate_with_credentials(email, password)).to eql(nil)
       end
+      it "returns a user instance even when email entered has whitespaces" do
+        user.save
+        email = "  jdoe@gmail.com  "
+        password = user.password
+        expect(User.authenticate_with_credentials(email, password)).to eql(user)
+      end
     end
   end
 end
