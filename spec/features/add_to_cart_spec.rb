@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'support/database_cleaner'
 
 RSpec.feature "ProductDetails", type: :feature, js: true do
   # SETUP
