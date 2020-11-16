@@ -6,14 +6,51 @@
   <body>
     <h1>Thank you for your purchase at jungle.com</h1>
     <p>
+    Your order id is: <%= @order.id %>.<br>
+    </p>
+    <p>
       You have successfully ordered:
     </p>
-    <p>
-    Your order id is: <%= @user.login %>.<br>
-    </p>
-    <p>
-      To login to the site, just follow this link: <%= @url %>.
-    </p>
+   
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |info| %>
+          <tr>
+            <td>
+              <p><%= info[:product].name %></p>
+            </td>
+            <td>
+              <%= humanized_money_with_symbol info[:product].price %>
+            </td>
+            <td> 
+              <%= info[:quantity] %>
+            </td>
+            <td>
+              <%= humanized_money_with_symbol info[:product].price * info[:quantity] %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4">
+            TOTAL:
+          </th>
+          <th>
+            <%= humanized_money_with_symbol @order.total_cents / 100.0 %>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+
     <p>Thanks for your purchase and have a great day!</p>
   </body>
 </html>

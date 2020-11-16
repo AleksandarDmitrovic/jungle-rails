@@ -1,9 +1,10 @@
 class UserMailer < ApplicationMailer
   default from: "no-reply@jungle.com"
 
-  def recepit_email
-    @user = params[:user]
-    @url = "http://localhost/3000/orders/id"
-    mail(to: @user.email, subject: "Thank you for your order (order number)")
+  def recepit_email(order, products)
+    @order = order
+    @products = products
+
+    mail(to: @order.email, subject: "Thank you for your order Order#:#{order.id}")
   end
 end

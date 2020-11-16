@@ -10,9 +10,16 @@ class OrdersController < ApplicationController
     charge = perform_stripe_charge
     order  = create_order(charge)
 
+    line_items =  LineItem.where(order_id: order.id)
+    products = line_items.map { |line_item| { product: Product.find(line_item.product_id), quantity: line_item.quantity } }
+    # raise line_items.inspect
+
     if order.valid?
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
+
+      # UserMailer.with(order: @order).welcome_email
+      UserMailer.recepit_email(order, products).deliver_now
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
