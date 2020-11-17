@@ -24,6 +24,7 @@
           <dd><%= humanized_money_with_symbol @product.price %></dd>
         </dl>
       <h4> Reviews </h4>
+      <% if @user %>
       <%= form_for :products, url: "/products/#{@product.id}/reviews" do |f| %>
         <div class="form-group">
           <%= f.label :rating %>
@@ -34,6 +35,7 @@
           <%= f.text_area :description, class: 'form-control' %>
         </div>
         <%= f.submit 'Submit Review', class: 'btn btn-primary' %>
+      <% end %>
       <% end %>
         <% @reviews.each do |review| %>
         <dl class="dl-horizontal">

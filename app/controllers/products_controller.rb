@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
     rating: review.rating, 
     user: User.select('first_name', 'last_name').where(id: review.user_id) 
     }}
+    @user = session[:user_id]
   end
 
 end
