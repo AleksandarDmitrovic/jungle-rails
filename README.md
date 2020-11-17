@@ -1,7 +1,21 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application that was built with Rails 4.2.
+A lighthouse lab project to simulate navigating an existing code-base and implementing new features with a new language (Ruby). 
+Implemented features without thorough explanations that simulated real-world situations.
 
+Features implemented for Jungle:
+
+-Sold Out Badge: boolean helper function to display badge when inventory 0.
+-Admin Categories: Created restful routes for an admin dashboard and the ability to create new categories within the admin namespace.
+-User Authentication: Users can signup and login to Jungle - password is encrypted and email is validated to be unique and normalized before entry into the database.
+-Enhanced Order Page: The order page contains items, their image, name, description, quantities and line item totals
+-Confirmation Email: A receipt email is sent to the user to confirm a purchase with the order number and details.
+
+## Final Product
+
+!["Screenshot of the Product Page"]()
+!["Screenshot of Order Confirmation Page"]()
 
 ## Setup
 
