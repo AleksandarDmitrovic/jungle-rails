@@ -15,15 +15,3 @@ class ProductsController < ApplicationController
   end
 
 end
-
-# <%= form_for [@organization, @venue] do |f| %>
-#   <div class="form-group">
-#    <%= form.label :name %>
-#    <%= form.text_field :name, class: 'form-control' %>
-#  </div>
-
-#  <div class="form-group">
-#    <%= form.label :description %>
-#    <%= form.text_area :description, class: 'form-control' %>
-#  </div>
-# </div>

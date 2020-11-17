@@ -33,6 +33,7 @@
           <%= f.label :description %>
           <%= f.text_area :description, class: 'form-control' %>
         </div>
+        <%= f.submit 'Submit Review', class: 'btn btn-primary' %>
       <% end %>
         <% @reviews.each do |review| %>
         <dl class="dl-horizontal">
