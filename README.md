@@ -6,16 +6,16 @@ Implemented features without thorough explanations that simulated real-world sit
 
 Features implemented for Jungle:
 
--Sold Out Badge: boolean helper function to display badge when inventory 0.
--Admin Categories: Created restful routes for an admin dashboard and the ability to create new categories within the admin namespace.
--User Authentication: Users can signup and login to Jungle - password is encrypted and email is validated to be unique and normalized before entry into the database.
--Enhanced Order Page: The order page contains items, their image, name, description, quantities and line item totals
--Confirmation Email: A receipt email is sent to the user to confirm a purchase with the order number and details.
+- Sold Out Badge: boolean helper function to display badge when inventory 0.
+- Admin Categories: Created restful routes for an admin dashboard and the ability to create new categories within the admin namespace.
+- User Authentication: Users can signup and login to Jungle - password is encrypted and email is validated to be unique and normalized before entry into the database.
+- Enhanced Order Page: The order page contains items, their image, name, description, quantities and line item totals
+- Confirmation Email: A receipt email is sent to the user to confirm a purchase with the order number and details.
 
 ## Final Product
 
-!["Screenshot of the Product Page"]()
-!["Screenshot of Order Confirmation Page"]()
+!["Screenshot of the Product Page"](https://github.com/AleksandarDmitrovic/jungle-rails/blob/master/docs/products.png?raw=true)
+!["Screenshot of Order Confirmation Page"](https://github.com/AleksandarDmitrovic/jungle-rails/blob/master/docs/order_confirmation.png?raw=true)
 
 ## Setup
 
