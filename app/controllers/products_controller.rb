@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
-    review_info = Review.where( product_id: params[:id])
+    review_info = Review.where( product_id: params[:id]).reverse
     @reviews = review_info.map { |review| 
     { description: review.description, 
     rating: review.rating, 
