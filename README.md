@@ -11,10 +11,12 @@ Features implemented for Jungle:
 - User Authentication: Users can signup and login to Jungle - password is encrypted and email is validated to be unique and normalized before entry into the database.
 - Enhanced Order Page: The order page contains items, their image, name, description, quantities and line item totals
 - Confirmation Email: A receipt email is sent to the user to confirm a purchase with the order number and details.
+- Product Ratings: A logged in user can leave reviews on a product's detail page and delete their own reviews.
 
 ## Final Product
 
 !["Screenshot of the Product Page"](https://github.com/AleksandarDmitrovic/jungle-rails/blob/master/docs/products.png?raw=true)
+!["Screenshot of Product details Page"](https://github.com/AleksandarDmitrovic/jungle-rails/blob/master/docs/product_details.png?raw=true)
 !["Screenshot of Order Confirmation Page"](https://github.com/AleksandarDmitrovic/jungle-rails/blob/master/docs/order_confirmation.png?raw=true)
 
 ## Setup
