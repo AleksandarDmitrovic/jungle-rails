@@ -14,9 +14,11 @@ Features implemented for Jungle:
 - Product Ratings: A logged in user can leave reviews on a product's detail page and delete their own reviews.
 
 ## Final Product
-
+Product Page (Home Page)
 !["Screenshot of the Product Page"](https://github.com/AleksandarDmitrovic/jungle-rails/blob/master/docs/products.png?raw=true)
+Product details Page
 !["Screenshot of Product details Page"](https://github.com/AleksandarDmitrovic/jungle-rails/blob/master/docs/product_details.png?raw=true)
+Order Confirmation Page
 !["Screenshot of Order Confirmation Page"](https://github.com/AleksandarDmitrovic/jungle-rails/blob/master/docs/order_confirmation.png?raw=true)
 
 ## Setup
